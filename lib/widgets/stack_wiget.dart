@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:luma_mind/enums/widget_enums.dart';
 
 class StackWiget extends StatefulWidget {
@@ -15,13 +14,13 @@ class _StackWigetState extends State<StackWiget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.fromLTRB(8, 8, 0, 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(
             height: WidgetDimesion.normalHeight,
-            width: 370,
+            width: 380,
             child: PageView.builder(
               onPageChanged: (value) {
                 setState(() {
@@ -41,8 +40,8 @@ class _StackWigetState extends State<StackWiget> {
               widget.widgets.length,
               (index) => Container(
                 margin: const EdgeInsets.symmetric(vertical: 4),
-                width: 12,
-                height: 12,
+                width: 5,
+                height: 5,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: currentIndex == index ? Colors.white : Colors.grey,

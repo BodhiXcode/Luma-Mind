@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:luma_mind/screen/home_screen.dart';
 import 'package:luma_mind/screen/splash_screen.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       appBuilder: (context) {
         return GetMaterialApp(
-          home: HomeScreen(),
+          home: SplashScreen(),
           title: "Luma Mind",
           themeMode: ThemeMode.dark,
           darkTheme: ThemeData.dark(),
