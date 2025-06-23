@@ -17,7 +17,7 @@ class _NewUserWidgetState extends State<NewUserWidget> {
       width: double.infinity,
       height: WidgetDimesion.normalHeight,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(10),
         image: DecorationImage(
           image: AssetImage("assets/sun_rise_snow_mountain.jpg"),
           fit: BoxFit.cover,
@@ -34,11 +34,21 @@ class _NewUserWidgetState extends State<NewUserWidget> {
           children: [
             Text(
               "✨ Welcome to Luma Mind!",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
             const SizedBox(height: 10),
-            Text("Start by writing your first thought"),
-            Text("I have cover you for your:"),
+            Text(
+              "Start by writing your first thought",
+              style: TextStyle(color: Colors.white),
+            ),
+            Text(
+              "I've got you covered for your:",
+              style: TextStyle(color: Colors.white),
+            ),
             DefaultTextStyle(
               style: const TextStyle(
                 fontWeight: FontWeight.bold,

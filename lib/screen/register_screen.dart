@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:luma_mind/screen/home_screen.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -95,7 +94,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               onPressed: () {
                                 if (registerFormKey.currentState!
                                     .saveAndValidate()) {
-                                  Get.off(() => HomeScreen());
+                                  // Get.off(() => HomeScreen());
                                 }
                               },
                               child: Text("Register me"),

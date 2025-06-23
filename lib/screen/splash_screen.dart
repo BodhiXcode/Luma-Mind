@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+// import 'package:get/get.dart';
 import 'package:luma_mind/screen/register_screen.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
@@ -82,7 +82,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                 ShadIconButton(
                                   icon: const Icon(LucideIcons.arrowRight),
                                   onPressed: () {
-                                    Get.off(() => RegisterScreen());
+                                    // Get.off(() => RegisterScreen());
                                   },
                                 ),
                               ],

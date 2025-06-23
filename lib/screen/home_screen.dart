@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:luma_mind/modals/page.dart';
 import 'package:luma_mind/screen/dashboard_screen.dart';
 import 'package:luma_mind/screen/feed_screen.dart';
 import 'package:luma_mind/screen/journal_screen.dart';
@@ -18,13 +19,13 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentPageIndex = 0;
   late final PageController _pageController;
-  List<Widget> pages = [
-    DashboardScreen(),
-    JournalScreen(),
-    LumaChatScreen(),
-    ProgressScreen(),
-    FeedScreen(),
-    SettingsScreen(),
+  List<NavPage> pages = [
+    NavPage(DashboardScreen(), "Dashboard"),
+    NavPage(JournalScreen(), "Journals"),
+    NavPage(LumaChatScreen(), "Chats"),
+    NavPage(ProgressScreen(), "Progress"),
+    NavPage(FeedScreen(), "Feeds"),
+    NavPage(SettingsScreen(), "Settings"),
   ];
 
   @override
@@ -42,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Luma Mind")),
+      appBar: AppBar(title: Text(pages[currentPageIndex].title)),
       body: PageView.builder(
         controller: _pageController,
         itemCount: pages.length,
@@ -52,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
         itemBuilder: (context, index) {
-          return pages[index];
+          return pages[index].page;
         },
       ),
       bottomNavigationBar: BottomNavbar(
@@ -66,7 +67,6 @@ class _HomeScreenState extends State<HomeScreen> {
             curve: Curves.ease,
           );
         },
-        onActionPressed: (value) {},
         currentIndex: currentPageIndex,
         mainNavIcons: [
           LucideIcons.layoutDashboard,
@@ -74,9 +74,8 @@ class _HomeScreenState extends State<HomeScreen> {
           LucideIcons.messagesSquare,
           LucideIcons.trendingUp,
           LucideIcons.globe,
-          LucideIcons.settings,
+          LucideIcons.user,
         ],
-        actionNavIcons: [LucideIcons.pencil],
       ),
     );
   }

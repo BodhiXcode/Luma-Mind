@@ -10,7 +10,7 @@ class GettingToKnowWidget extends StatelessWidget {
       width: double.infinity,
       height: WidgetDimesion.normalHeight,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(10),
         image: DecorationImage(
           image: AssetImage("assets/cloud_mountain.jpg"),
           fit: BoxFit.cover,
